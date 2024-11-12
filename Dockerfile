@@ -21,4 +21,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "Body.js"]
+CMD ["npm", "run" , "xmd"]
