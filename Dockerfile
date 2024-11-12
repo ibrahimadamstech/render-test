@@ -9,9 +9,8 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN  git clone https://github.com/ibrahimadamstech/render-test.  /root/Bwm_BOt
+RUN git clone https://github.com/ibrahimadamstech/render-test  /root/Bwm_BOt
 WORKDIR /root/Bwm_Bot/
-
 
 
 COPY package.json .
