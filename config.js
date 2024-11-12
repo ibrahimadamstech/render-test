@@ -37,10 +37,10 @@ module.exports = { session: process.env.SESSION_ID || '',
         ? "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway" : "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway",
    
 };
-let fichier = require.resolve(__filename);
+const fichier = require.resolve(__filename);
 fs.watchFile(fichier, () => {
     fs.unwatchFile(fichier);
-    console.log(`mise à jour ${__filename}`);
+    console.log(`Updated ${__filename}`);
     delete require.cache[fichier];
     require(fichier);
 });
