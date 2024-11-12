@@ -7,7 +7,7 @@ const databasePath = path.join(__dirname, './database.db');
 const DATABASE_URL = process.env.DATABASE_URL === undefined
     ? databasePath
     : process.env.DATABASE_URL;
-module.exports = { session: process.env.SESSION_ID || '',
+module.exports = { session: process.env.SESSION_ID || 'ADAMS-2024;;;',
     PREFIXE: process.env.PREFIX || ".",
     OWNER_NAME: process.env.OWNER_NAME || "Ibrahim Adams",
     NUMERO_OWNER : process.env.NUMERO_OWNER || " Ibrahim Adams",              
@@ -34,13 +34,13 @@ module.exports = { session: process.env.SESSION_ID || '',
                   AUTO_BIO : process.env.AUTO_BIO || 'yes',
     DATABASE_URL,
     DATABASE: DATABASE_URL === databasePath
-        ? "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway" : "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway",
-   
+        ? "postgresql://flashmd_user:JlUe2Vs0UuBGh0sXz7rxONTeXSOra9XP@dpg-cqbd04tumphs73d2706g-a/flashmd" : "postgresql://flashmd_user:JlUe2Vs0UuBGh0sXz7rxONTeXSOra9XP@dpg-cqbd04tumphs73d2706g-a/flashmd",
+ 
 };
-const fichier = require.resolve(__filename);
+let fichier = require.resolve(__filename);
 fs.watchFile(fichier, () => {
     fs.unwatchFile(fichier);
-    console.log(`Updated ${__filename}`);
+    console.log(`mise à jour ${__filename}`);
     delete require.cache[fichier];
     require(fichier);
 });
